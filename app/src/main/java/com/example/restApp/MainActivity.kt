@@ -1,18 +1,15 @@
-package com.example.restass
+package com.example.restApp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.util.Log.d
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.StringBuilder
 
 const val BASE_URL="https://jsonplaceholder.typicode.com/"
 class MainActivity : AppCompatActivity() {
@@ -37,10 +34,10 @@ class MainActivity : AppCompatActivity() {
             BASE_URL).build().create(ApiInterface::class.java)
 
         val retrofitData = retrofitBuilder.getData()
-        retrofitData.enqueue(object : Callback<List<MyDataItem>?> {
+        retrofitData.enqueue(object : Callback<List<myData>?> {
             override fun onResponse(
-                call: Call<List<MyDataItem>?>,
-                response: Response<List<MyDataItem>?>
+                call: Call<List<myData>?>,
+                response: Response<List<myData>?>
             ) {
                 val responseBody = response.body()!!
 
@@ -49,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                 recyclerview_users.adapter=myAdapter
             }
 
-            override fun onFailure(call: Call<List<MyDataItem>?>, t: Throwable) {
+            override fun onFailure(call: Call<List<myData>?>, t: Throwable) {
                 d("MainActivity", "onFailure: "+t.message)
 
             }

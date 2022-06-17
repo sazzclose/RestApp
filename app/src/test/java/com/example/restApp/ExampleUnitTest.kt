@@ -1,4 +1,4 @@
-package com.example.restass
+package com.example.restApp
 
 import org.junit.Test
 

@@ -1,10 +1,10 @@
-package com.example.restass
+package com.example.restApp
 
 import retrofit2.Call
 import retrofit2.http.GET
 
 interface ApiInterface {
     @GET("posts")
-    fun getData(): Call<List<MyDataItem>>
+    fun getData(): Call<List<myData>>
 
 }

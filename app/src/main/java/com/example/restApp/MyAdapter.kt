@@ -1,4 +1,4 @@
-package com.example.restass
+package com.example.restApp
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.row_items.view.*
 
 
-class MyAdapter(val context:Context,val userList:List<MyDataItem>):RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+class MyAdapter(val context:Context,val userList:List<myData>):RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     class ViewHolder(itemView:View):RecyclerView.ViewHolder(itemView) {
         var userId: TextView

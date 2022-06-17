@@ -1,6 +1,6 @@
-package com.example.restass
+package com.example.restApp
 
-data class MyDataItem(
+data class myData(
     val body: String,
     val id: Int,
     val title: String,
